@@ -102,8 +102,6 @@ Projects serve as containers for modules and allow different Arduino setups or i
 
 The data type is sent together with the module content to the Arduino, where it can be processed accordingly.
 
-⚠️ **Current limitation:** Individual modules **cannot be deleted yet**.
-
 ---
 
 ### Arduino Integration

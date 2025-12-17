@@ -56,6 +56,7 @@ This JavaFX application allows you to communicate with an Arduino board via seri
 - Make sure to match the **data types** in your Arduino code with the module configuration in the app.
 - The **console for Serial output** is planned but not yet available.
 - The app **tries COM9 first** on startup. If unavailable, a manual connection is required.
+- The UI is currently only available in German language
 
 ---
 

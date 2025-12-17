@@ -7,9 +7,9 @@ This JavaFX application allows you to communicate with an Arduino board via seri
 ## Features
 
 ### Serial Communication
-- Connects to an Arduino board over a serial port.
-- By default, the app tries to communicate over **COM9** (the port used during development).
-- If your Arduino is on a different port, you can manually set the port using the **"Verbindung aufbauen"** button in the app.
+- The app **automatically tries to connect to the Arduino on COM9** at startup.
+- If no Arduino is found on COM9, the connection must be **manually established** later.
+- You can manually set the port using the **"Verbindung aufbauen"** button in the app.
 
 ### Projects
 - Create new projects with **custom names**.
@@ -39,15 +39,15 @@ This JavaFX application allows you to communicate with an Arduino board via seri
 
 1. **Connect Arduino** via USB cable to your computer.
 2. **Launch the JavaFX App**.
-3. **Establish connection**:
-   - Click **"Verbindung aufbauen"** to use the default COM port or select a custom port.
-4. **Create a new project**:
+   - The app will automatically try to connect to **COM9**.
+   - If no Arduino is detected on COM9, use the **"Verbindung aufbauen"** button to set the correct port manually.
+3. **Create a new project**:
    - Set a custom name and choose colors.
-5. **Add modules** to the project:
+4. **Add modules** to the project:
    - Assign names, colors, and a data type for each module.
-6. **Send data**:
+5. **Send data**:
    - The app sends the module data to the Arduino for processing.
-7. **Delete projects** if needed.
+6. **Delete projects** if needed.
 
 ---
 
@@ -55,5 +55,8 @@ This JavaFX application allows you to communicate with an Arduino board via seri
 - The app currently supports only **adding modules**; deleting individual modules is not yet implemented.
 - Make sure to match the **data types** in your Arduino code with the module configuration in the app.
 - The **console for Serial output** is planned but not yet available.
+- The app **tries COM9 first** on startup. If unavailable, a manual connection is required.
 
 ---
+
+## Folder Structure

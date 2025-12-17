@@ -1,0 +1,79 @@
+/* ================= ScrollPane ================= */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent; /* wichtig für ScrollPane-Inhalt */
+}
+
+/* ================= Spalten ================= */
+.base-column {
+    -fx-min-width: 250px;
+    -fx-padding: 15;
+    -fx-background-color: linear-gradient(to bottom right, #e0f7fa, #b2ebf2, #ffffff);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 6, 0, 0, 2);
+    -fx-transition: all 0.3s ease;
+}
+
+.base-column:hover {
+    -fx-background-color: linear-gradient(to bottom right, #bbdefb, #90caf9, #e0f7fa);
+    -fx-scale-x: 1.01;
+    -fx-scale-y: 1.01;
+}
+
+/* ================= Header ================= */
+.header {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-text-fill: #00979D;
+    -fx-alignment: center;
+    -fx-underline: true;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 2);
+    -fx-transition: all 0.5s ease;
+}
+
+.header:hover {
+    -fx-effect: dropshadow(gaussian, rgba(21,101,192,0.7), 10, 0, 0, 0);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* ================= Spalten Text ================= */
+.myColumnTextStyle {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-text-fill: #00979D;
+    -fx-underline: true;
+    -fx-padding: 0 0 20 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);
+    -fx-transition: all 0.3s ease;
+}
+
+.myColumnTextStyle:hover {
+    -fx-text-fill: #0288d1;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+/* ================= Spaltenränder ================= */
+.left-column {
+    -fx-border-color: #90caf9;
+    -fx-border-width: 0 4 0 0;
+    -fx-border-insets: 0;
+}
+
+.middle-column {
+    -fx-border-color: #90caf9;
+    -fx-border-width: 0 4 0 0;
+    -fx-border-insets: 0;
+}
+
+.right-column {
+    /* keine Border nötig */
+}

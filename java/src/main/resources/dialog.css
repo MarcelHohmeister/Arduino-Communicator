@@ -1,0 +1,120 @@
+/* ===============================
+   Dialog Root
+   =============================== */
+.dialog-root {
+    -fx-background-color: #1e1e1e;
+    -fx-font-family: "Segoe UI", "Inter", sans-serif;
+}
+
+/* ===============================
+   Titel
+   =============================== */
+.dialog-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+/* ===============================
+   Labels
+   =============================== */
+.dialog-label {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+}
+
+/* ===============================
+   Textfelder / ComboBox
+   =============================== */
+.dialog-textfield,
+.dialog-combobox {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: white;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-border-color: #444;
+}
+
+/* ===============================
+   ComboBox – GESCHLOSSEN
+   =============================== */
+
+/* Text im geschlossenen Zustand */
+.dialog-combobox > .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+/* Verhindert grauen Default-Hintergrund */
+.dialog-combobox > .list-cell:filled:selected,
+.dialog-combobox > .list-cell:filled:selected:hover {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+/* ===============================
+   ComboBox – GEÖFFNET
+   =============================== */
+
+/* Button-Area während geöffnet */
+.dialog-combobox:showing > .list-cell {
+    -fx-text-fill: #00d2ff;
+    -fx-background-color: #333333;
+}
+
+/* ===============================
+   ComboBox – POPUP
+   =============================== */
+
+/* Popup-Hintergrund */
+.dialog-combobox .combo-box-popup .list-view {
+    -fx-background-color: #2a2a2a;
+}
+
+/* Einträge */
+.dialog-combobox .combo-box-popup .list-cell {
+    -fx-text-fill: #dddddd;
+    -fx-background-color: transparent;
+}
+
+/* Hover */
+.dialog-combobox .combo-box-popup .list-cell:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+/* Ausgewählter Eintrag */
+.dialog-combobox .combo-box-popup .list-cell:selected {
+    -fx-background-color: #3a7bd5;
+    -fx-text-fill: white;
+}
+
+/* ===============================
+   ColorPicker
+   =============================== */
+.dialog-colorpicker {
+    -fx-background-radius: 6px;
+}
+
+/* ===============================
+   Buttons
+   =============================== */
+.dialog-button {
+    -fx-background-color: linear-gradient(to right, #3a7bd5, #00d2ff);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 8 18 8 18;
+}
+
+.dialog-button:hover {
+    -fx-opacity: 0.9;
+}
+
+/* ===============================
+   Sektionen (optional)
+   =============================== */
+.dialog-section {
+    -fx-padding: 15;
+    -fx-background-color: #252525;
+    -fx-background-radius: 10px;
+}

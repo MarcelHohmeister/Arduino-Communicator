@@ -44,10 +44,11 @@ This JavaFX application allows you to communicate with an Arduino board via seri
 3. **Create a new project**:
    - Set a custom name and choose colors.
 4. **Add modules** to the project:
+   - Select the project you want to add  a module to by clicking on it (activates your selected outline color around the box)
    - Assign names, colors, and a data type for each module.
-5. **Send data**:
+6. **Send data**:
    - The app sends the module data to the Arduino for processing.
-6. **Delete projects** if needed.
+7. **Delete projects** if needed.
 
 ---
 

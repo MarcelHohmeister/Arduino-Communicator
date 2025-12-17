@@ -1,64 +1,163 @@
 # Arduino Communicator App
 
-This JavaFX application allows you to communicate with an Arduino board via serial communication. It provides a project-based interface where you can create and manage projects, each containing different modules that send data to the Arduino.
+The **Arduino Communicator App** is a JavaFX-based desktop application that enables serial communication between a Java application and an Arduino board. The application follows a **project-based and modular design**, allowing users to create projects that contain different modules which send structured data to the Arduino.
+
+This repository is intended as a **learning and experimentation project**, focusing on JavaFX, Java desktop application architecture, and serial communication with external hardware.
+
+---
+
+## Motivation & Background
+
+This project was started with the goal of **learning and deepening knowledge in**:
+
+* **JavaFX** for modern desktop user interfaces
+* **Java application architecture** (controllers, modular structure, separation of concerns)
+* **Serial communication in Java** and interaction with microcontrollers (Arduino)
+
+Instead of building a single-purpose tool, the app was designed to be **extensible and modular**, so that new module types (e.g. motor control, sensors, displays) can be added with minimal changes to the existing codebase. This makes the project well-suited as a foundation for further experiments and learning.
 
 ---
 
 ## Features
 
 ### Serial Communication
-- The app **automatically tries to connect to the Arduino on COM9** at startup.
-- If no Arduino is found on COM9, the connection must be **manually established** later.
-- You can manually set the port using the **"Verbindung aufbauen"** button in the app.
+
+* The app **automatically tries to connect to an Arduino on COM9** at startup.
+* The COM port is currently **hardcoded to COM9**, as this was the port used consistently during development.
+* If no Arduino is found on COM9, the connection can be **established manually** by entering the correct port via the **"Verbindung aufbauen"** button in the UI.
+
+> ℹ️ The port handling is intentionally kept simple for now, as the focus of this project is on the core application features rather than advanced configuration.
+
+---
 
 ### Projects
-- Create new projects with **custom names**.
-- Customize project appearance: **background color**, **text color**, and **border color**.
-- Projects can be deleted if no longer needed.
+
+* Create multiple projects with **custom names**.
+* Customize each project’s appearance:
+
+  * Background color
+  * Text color
+  * Border / outline color
+* Projects can be **deleted** when no longer needed.
+
+Projects serve as containers for modules and allow different Arduino setups or ideas to be managed independently.
+
+---
 
 ### Modules
-- Add multiple types of modules to a project:
-  - **RGB Module**
-  - **Text Module**
-  - **Switch Module**
-- Each module can have a **name** and **custom colors**.
-- Each module must be assigned a **data type**, which is sent along with its content to the Arduino for processing.
-- ⚠️ Note: Individual modules **cannot be deleted yet**.
 
-### Planned Features
-- A **console window** is planned to display `Serial.print` outputs from the Arduino.
-- This feature is **not yet implemented**.
+* Each project can contain multiple modules.
+* Currently supported module types:
+
+  * **RGB Module**
+  * **Text Module**
+  * **Switch Module**
+* Each module has:
+
+  * A **custom name**
+  * Individual **color settings**
+  * An assigned **data type**
+
+The data type is sent together with the module content to the Arduino, where it can be processed accordingly.
+
+⚠️ **Current limitation:** Individual modules **cannot be deleted yet**.
+
+---
+
+### Data Persistence
+
+* All changes to the **project and module structure** are automatically saved.
+* The current application state is persisted in a file called **`properties.json`**.
+* This ensures that projects, modules, and their configurations are **restored on the next application start** without requiring manual reconfiguration.
+
+---
+
+### Projects
+
+* Create multiple projects with **custom names**.
+* Customize each project’s appearance:
+
+  * Background color
+  * Text color
+  * Border / outline color
+* Projects can be **deleted** when no longer needed.
+
+Projects serve as containers for modules and allow different Arduino setups or ideas to be managed independently.
+
+---
+
+### Modules
+
+* Each project can contain multiple modules.
+* Currently supported module types:
+
+  * **RGB Module**
+  * **Text Module**
+  * **Switch Module**
+* Each module has:
+
+  * A **custom name**
+  * Individual **color settings**
+  * An assigned **data type**
+
+The data type is sent together with the module content to the Arduino, where it can be processed accordingly.
+
+⚠️ **Current limitation:** Individual modules **cannot be deleted yet**.
+
+---
 
 ### Arduino Integration
-- Example Arduino code is provided in the `arduino/` folder.
-- Modules send their data and type to the Arduino, which processes it according to the example sketch.
+
+* The serial communication has currently been **tested only with an Arduino Uno (R1)**, which is one of the most common and widely used Arduino boards.
+* Other Arduino boards may work as well, but have **not yet been explicitly tested**.
+* Example Arduino sketches are provided in the `arduino/` folder.
+* The Java application sends **structured data (type + value)** to the Arduino.
+* The Arduino processes incoming data based on the data type defined in the module.
+
+This separation makes it easy to adapt the Arduino code to custom module types or behaviors.
+
+---
+
+### Planned Features
+
+* A **console window** to display `Serial.print()` output from the Arduino directly in the app.
+* Improved **serial port configuration** (no hardcoded port).
+* Module management improvements (e.g. deleting or reordering modules).
 
 ---
 
 ## Usage
 
-1. **Connect Arduino** via USB cable to your computer.
-2. **Launch the JavaFX App**.
-   - The app will automatically try to connect to **COM9**.
-   - If no Arduino is detected on COM9, use the **"Verbindung aufbauen"** button to set the correct port manually.
+1. **Connect the Arduino** to your computer via USB.
+2. **Launch the JavaFX application**.
+
+   * The app will automatically attempt to connect to **COM9**.
+   * If no Arduino is detected, use **"Verbindung aufbauen"** to select the correct port manually.
 3. **Create a new project**:
-   - Set a custom name and choose colors.
-4. **Add modules** to the project:
-   - Select the project you want to add  a module to by clicking on it (activates your selected outline color around the box)
-   - Assign names, colors, and a data type for each module.
-6. **Send data**:
-   - The app sends the module data to the Arduino for processing.
-7. **Delete projects** if needed.
+
+   * Choose a project name and colors.
+4. **Add modules** to a project:
+
+   * Select a project by clicking on it (the outline color indicates the active project).
+   * Configure module name, colors, and data type.
+5. **Send data**:
+
+   * Module data is sent to the Arduino via serial communication.
+6. **Delete projects** when they are no longer needed.
 
 ---
 
-## Notes
-- The app currently supports only **adding modules**; deleting individual modules is not yet implemented.
-- Make sure to match the **data types** in your Arduino code with the module configuration in the app.
-- The **console for Serial output** is planned but not yet available.
-- The app **tries COM9 first** on startup. If unavailable, a manual connection is required.
-- The UI is currently only available in German language
+## Notes & Limitations
+
+* Only **adding modules** is currently supported; deleting individual modules is not implemented yet.
+* The Arduino sketch must handle the **same data types** that are configured in the app.
+* The **serial console** feature is planned but not yet available.
+* The application UI is currently **German only**.
+* The app **tries COM9 first** on startup; manual selection is required if another port is used.
+* Modules contain an **"Einstellungen"** button, which will in further updates give the possibility to configure alreadyy added modules.
 
 ---
 
-## Folder Structure
+## Status
+
+This project is actively used as a **learning project** and will evolve over time as new features are implemented and the architecture is refined.

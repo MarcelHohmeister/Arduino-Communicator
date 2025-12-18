@@ -98,7 +98,7 @@ This separation makes it easy to adapt the Arduino code to custom module types o
 
 1. **Clone the repository**
 (```git clone https://github.com/MarcelHohmeister/Arduino-Communicator.git```)
-2. **Open the Java folder** (java/) in your favorite Java IDE.
+2. **Open the Java folder** [`java/`](java/) in your favorite Java IDE.
 3. **Connect your Arduino** to your computer via USB.
 4. **Build and run** the application with Maven or just run it in your IDE.
    4.1. Your The app will automatically attempt to connect to COM9.

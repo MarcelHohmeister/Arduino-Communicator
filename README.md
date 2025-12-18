@@ -108,7 +108,7 @@ The data type is sent together with the module content to the Arduino, where it 
 
 * The serial communication has currently been **tested only with an Arduino Uno (R1)**.
 * Other Arduino boards may work as well, but have **not yet been explicitly tested**.
-* Example Arduino sketches are provided in the `arduino/` folder.
+* An example Arduino Sketch is provided in the `arduino/` folder.
 * The Java application sends **structured data (type + value)** to the Arduino.
 * The Arduino processes incoming data based on the data type defined in the module.
 

@@ -106,7 +106,7 @@ The data type is sent together with the module content to the Arduino, where it 
 
 ### Arduino Integration
 
-* The serial communication has currently been **tested only with an Arduino Uno (R1)**, which is one of the most common and widely used Arduino boards.
+* The serial communication has currently been **tested only with an Arduino Uno (R1)**.
 * Other Arduino boards may work as well, but have **not yet been explicitly tested**.
 * Example Arduino sketches are provided in the `arduino/` folder.
 * The Java application sends **structured data (type + value)** to the Arduino.

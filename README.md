@@ -136,7 +136,7 @@ This separation makes it easy to adapt the Arduino code to custom module types o
    * Choose a project name and colors.
 4. **Add modules** to a project:
 
-   * Select a project by clicking on it (the outline color indicates the active project).
+   * Select a project by clicking on it (the outline indicates the active project).
    * Configure module name, colors, and data type.
 5. **Send data**:
 

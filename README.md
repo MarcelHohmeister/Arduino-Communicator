@@ -97,7 +97,7 @@ This separation makes it easy to adapt the Arduino code to custom module types o
 ### Installation
 
 1. **Clone the repository**
-git clone https://github.com/MarcelHohmeister/Arduino-Communicator.git
+(git clone https://github.com/MarcelHohmeister/Arduino-Communicator.git)
 2. **Open the project** in your favorite Java IDE.
 3. **Connect your Arduino** to your computer via USB.
 4. **Build and run** the application with Maven or just run it in your IDE.

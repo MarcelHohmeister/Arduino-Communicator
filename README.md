@@ -2,8 +2,6 @@
 
 The **Arduino Communicator App** is a JavaFX-based desktop application that enables serial communication between a Java application and an Arduino board. The application follows a **project-based and modular design**, allowing users to create projects that contain different modules which send structured data to the Arduino.
 
-This repository is intended as a **learning and experimentation project**, focusing on JavaFX, Java desktop application architecture, and serial communication with external hardware.
-
 ---
 
 ## Motivation & Background

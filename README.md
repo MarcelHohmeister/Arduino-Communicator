@@ -153,6 +153,7 @@ This separation makes it easy to adapt the Arduino code to custom module types o
 * The application UI is currently **German only**.
 * The app **tries COM9 first** on startup; manual selection is required if another port is used.
 * Modules contain an **"Einstellungen"** button, which will in further updates give the possibility to configure alreadyy added modules.
+* ++"Einstellungen"++ button for modules has no function yet
 
 ---
 
